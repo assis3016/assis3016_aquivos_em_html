@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Pesquisa de Clima Organizacional – 2025</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 700px;
+            margin: 2em auto;
+            background-color: #f7f9fc;
+            color: #333;
+        }
+
+        h1 {
+            color: #2a7ae2;
+            text-align: center;
+        }
+
+        fieldset {
+            margin-bottom: 1.5em;
+            padding: 1.5em;
+            border: 3px solid #4a90e2;
+            border-radius: 8px;
+            background-color: #ffffff;
+        }
+
+        legend {
+            font-weight: bold;
+            color: #4a90e2;
+            font-size: 1.2em;
+        }
+
+        label {
+            display: block;
+            margin-top: 1em;
+            color: #333;
+        }
+
+        input[type="text"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 0.6em;
+            margin-top: 0.3em;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+
+        input[type="text"]:focus,
+        textarea:focus,
+        select:focus {
+            border-color: #4a90e2;
+            outline: none;
+        }
+
+        .inline-checkbox label {
+            display: inline-block;
+            margin-right: 1em;
+            color: #555;
+        }
+
+        button {
+            display: block;
+            margin: 2em auto 0;
+            padding: 0.8em 2em;
+            font-size: 1.1em;
+            color: white;
+            background-color: #4a90e2;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #357ab8;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>📝 Pesquisa de Clima Organizacional – 2025</h1>
+    <form action="{{ url_for('submit') }}" method="post">
+        <fieldset>
+            <legend>👤 Sobre você</legend>
+            <label>Qual seu nome? (opcional)
+                <input type="text" name="nome">
+            </label>
+            <label>Qual seu departamento/setor? *
+                <input type="text" name="setor" required>
+            </label>
+        </fieldset>
+
+        <fieldset>
+            <legend>🏢 Ambiente de Trabalho</legend>
+            <label>Você se sente confortável no ambiente físico da empresa? *
+                <select name="conforto" required>
+                    <option value="">— Escolha —</option>
+                    <option>Sim, totalmente</option>
+                    <option>Mais ou menos</option>
+                    <option>Não muito</option>
+                    <option>Nada confortável</option>
+                </select>
+            </label>
+            <label>Se quiser, descreva algo que poderia melhorar no ambiente físico:
+                <textarea name="sugestao_amb"></textarea>
+            </label>
+        </fieldset>
+
+        <fieldset>
+            <legend>🤝 Relacionamento com Colegas</legend>
+            <label>Como você avalia seu relacionamento com a equipe? *
+                <select name="relacao" required>
+                    <option value="">— Escolha —</option>
+                    <option>Excelente</option>
+                    <option>Bom</option>
+                    <option>Regular</option>
+                    <option>Ruim</option>
+                </select>
+            </label>
+            <label>Gostaria de comentar algo sobre o relacionamento com colegas?
+                <textarea name="comentario_rel"></textarea>
+            </label>
+        </fieldset>
+
+        <fieldset>
+            <legend>🚧 Dificuldades no Trabalho</legend>
+            <div class="inline-checkbox">
+                <label><input type="checkbox" name="dificuldades" value="Falta de recursos"> Falta de recursos</label>
+                <label><input type="checkbox" name="dificuldades" value="Comunicação falha"> Comunicação falha</label>
+                <label><input type="checkbox" name="dificuldades" value="Sobrecarga de trabalho"> Sobrecarga de
+                    trabalho</label>
+                <label><input type="checkbox" name="dificuldades" value="Falta de reconhecimento"> Falta de
+                    reconhecimento</label>
+                <label><input type="checkbox" name="dificuldades" value="Conflitos internos"> Conflitos internos</label>
+                <label><input type="checkbox" name="dificuldades" value="Outros"> Outros</label>
+            </div>
+            <label>Descreva mais sobre essas dificuldades (opcional):
+                <textarea name="desc_dific"></textarea>
+            </label>
+        </fieldset>
+
+        <fieldset>
+            <legend>🌟 Avaliação Geral</legend>
+            <label>De 1 a 5, qual seu nível geral de satisfação com a empresa? *
+                <select name="satisfacao" required>
+                    <option value="">—</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+            </label>
+            <label>Deixe uma sugestão ou comentário final (opcional):
+                <textarea name="comentario_final"></textarea>
+            </label>
+        </fieldset>
+
+        <button type="submit">Enviar respostas</button>
+    </form>
+</body>
+
+</html>

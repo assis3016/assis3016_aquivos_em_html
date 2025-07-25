@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assis Soluções - Logo Interativo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&display=swap" rel="stylesheet"> 
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f8f9fa;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        #header {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 18px;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+        
+        #logoContainer {
+            text-align: center;
+        }
+        
+        #logoCanvas {
+            border-radius: 50%;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            width: 600px;
+            height: 600px;
+            display: block;
+            margin: 0 auto;
+        }
+        
+        #logoCanvas:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        .company-name {
+            margin-top: 20px;
+            font-size: 24px;
+            font-weight: 700;
+            color: #2c3e50;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .tagline {
+            margin-top: 8px;
+            font-size: 14px;
+            color: #7f8c8d;
+            font-weight: 400;
+        }
+    </style>
+</head>
+<body>
+    <div id="header">
+        Contato: (11) 97274-4161
+    </div>
+    <div id="logoContainer">
+        <canvas id="logoCanvas"></canvas>
+        <h1 class="company-name">Assis Soluções</h1>
+        <p class="tagline">Inovação e tecnologia para seu negócio</p>
+    </div>
+
+    <script>
+        function loadScript(url, callback) {
+            const script = document.createElement("script");
+            script.type = "text/javascript";
+            script.src = url;
+            script.onload = callback;
+            script.onerror = () => console.error("Erro ao carregar o script: " + url);
+            document.body.appendChild(script);
+        }
+
+        loadScript("logo.js", () => {
+            if (typeof InteractiveLogo !== 'undefined') {
+                new InteractiveLogo('logoCanvas', {
+                    boxText: "Tecnologia que Transforma",
+                    boxPosition: { y: 0.45 },
+                    boxStyle: {
+                        width: 0.8,
+                        height: 45,
+                        textColor: 'white',
+                        bgColor: 'rgba(40, 40, 40, 0.7)'
+                    }
+                });
+            } else {
+                console.error("Erro: InteractiveLogo não está definido após carregar 'logo.js'.");
+            }
+        });
+    </script>
+</body>
+</html>

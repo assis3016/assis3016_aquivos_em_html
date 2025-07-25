@@ -1,0 +1,78 @@
+[02:19, 01/10/2024] Assis: <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>divs lado a lado</title>
+    <link rel="stylesheet" href= "boot strap.css">
+ </head>
+<body>
+    
+    
+    <div class="wrapper">
+  <div class="one">One</div>
+  <div class="two">Two</div>
+  <div class="three">Three</div>
+  <div class="four">Four</div>
+  <div class="five">Five</div>
+  <div class="six">Six</div>
+</div>
+
+</body>
+</html>
+[02:20, 01/10/2024] Assis: .wrapper { height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 300px 200px;
+  grid-template-rows: 200px  
+}
+
+.one { display: grid;
+grid-auto-flow: row;
+  background-color: red;
+}
+.two {display: grid;
+grid-auto-flow: row;
+  background-color: blue;
+}
+.three {
+  grid-column: 1;
+  grid-row: 2 / 5;
+}
+.four {
+  grid-column: 3;
+  grid-row: 3;
+}
+.five {
+  grid-column: 2;
+  grid-row: 4;
+}
+.six {
+  grid-column: 3;
+  grid-row: 4;
+}
+: 3; grid-row: 4; }
+[02:47, 01/10/2024] Assis: <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>divs lado a lado</title>
+    <link rel="stylesheet" href="Untitled-1bootstrap.css">
+</head>
+
+<body>
+
+
+    <div class="container">
+        <div class="one">One</div>
+        <div class="two">Two</div>
+        <div class="three">Three</div>
+        <div class="four">Four</div>
+
+    </div>
+
+</body>
+
+</html>

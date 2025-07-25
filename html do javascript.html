@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+    <script src = "D:\Users\assis\java\document.js"></script>
+         
+</head>
+<body>
+    <h2>O que o JavaScript pode fazer?</h2>
+    <input type="text" id="meuTexto" placeholder="Digite algo..." />
+    <p id="olaMundo">JavaScript pode alterar o conteúdo HTML</p>
+    <button type="button" onclick="recuperarTexto()">Clique aqui</button>
+
+    <script>
+        function recuperarTexto() {
+            // Obtém o valor do input
+            const textoDigitado = document.getElementById('meuTexto').value;
+            
+            // Atualiza o parágrafo com o texto digitado
+            document.getElementById('olaMundo').textContent = 
+                textoDigitado ? 
+                `Você digitou: ${textoDigitado}` : 
+                'Nenhum texto foi digitado!';
+        }
+    </script>
+</body>
+</html>

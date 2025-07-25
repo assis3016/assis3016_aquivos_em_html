@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Cruz e Sorte</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background: #f0f8ff;
+      padding: 50px;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: auto;
+      background: #fff;
+      border-radius: 12px;
+      padding: 30px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    img {
+      width: 200px;
+      margin-bottom: 20px;
+    }
+
+    #frase {
+      font-size: 1.2em;
+      color: #333;
+      margin-top: 20px;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <img src="https://drive.google.com/file/d/1u4_zuTEHn4r64CJiqkkMsSpakr-qx1L_/view?usp=drive_link" alt="Cruz com Jesus">
+    <h2>Clique abaixo para receber uma frase de sorte:</h2>
+    <button onclick="sortearFrase()">Sortear</button>
+    <div id="frase"></div>
+  </div>
+
+  <script>
+    const frases = [
+      "Você é mais forte do que imagina.",
+      "Bênçãos estão a caminho!",
+      "A fé move montanhas.",
+      "Hoje será um dia incrível.",
+      "Deus está cuidando de tudo.",
+      "Nunca perca a esperança."
+    ];
+
+    function sortearFrase() {
+      const indice = Math.floor(Math.random() * frases.length);
+      document.getElementById('frase').textContent = frases[indice];
+    }
+  </script>
+
+</body>
+</html>
